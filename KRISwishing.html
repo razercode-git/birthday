@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Queen ❤</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-top: 20%;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-top: 10px;
+      animation: fadeIn 3s ease-in-out;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      background: #ff4081;
+      color: white;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e91e63;
+      transform: scale(1.1);
+    }
+    /* Letter popup */
+    .letter-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #e47f7f;
+      color: #e91e63;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      padding: 32px 24px;
+      z-index: 1000;
+      max-width: 350px;
+      font-size: 1.2rem;
+      animation: fadeIn 0.7s;
+    }
+    .letter-popup h2 {
+      margin-top: 0;
+      color: #ff4081;
+    }
+    .close-btn {
+      margin-top: 18px;
+      padding: 8px 18px;
+      background: #ff4081;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .close-btn:hover {
+      background: #e91e63;
+    }
+    /* Balloons */
+    .balloon {
+      width: 60px;
+      height: 80px;
+      background: red;
+      border-radius: 50% 50% 50% 50%;
+      position: absolute;
+      bottom: -100px;
+      animation: floatUp 8s infinite ease-in-out;
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 60px;
+      background: #555;
+      top: 80px;
+      left: 50%;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: gold;
+      top: -10px;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday My Queen ❤ 🎂</h1>
+  <p>You’re the most beautiful and caring person in my world 💕</p>
+  <button onclick="showSurprise()">Click for Surprise 🎁</button>
+
+  <div class="letter-popup" id="letterPopup">
+    <h2>💖 Birthday Letter 💖</h2>
+    <p style="text-align: left;" color="#333">
+    Happy birthday My Queen... My Sweetheart , you are one of the best thing happened to me.. 
+    After 8th of March, 2017..things changed in my life in a very beautiful way...I never expected that these things can be true..Thanks for being in MY LIFE...for NOW and FOREVER... Wishing you all the happiness, my love!<br>
+      You mean the world to me. Enjoy your special day! 🎂✨
+    </p>
+    <button class="close-btn" onclick="closeLetter()">Close</button>
+  </div>
+
+  <script>
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Balloons
+    for (let i = 0; i < 10; i++) {
+      let balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = random(0, 100) + "vw";
+      balloon.style.background = `hsl(${random(0,360)}, 70%, 60%)`;
+      balloon.style.animationDuration = random(6, 12) + "s";
+      document.body.appendChild(balloon);
+    }
+
+    // Confetti
+    for (let i = 0; i < 50; i++) {
+      let confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = random(0, 100) + "vw";
+      confetti.style.background = `hsl(${random(0,360)}, 80%, 60%)`;
+      confetti.style.animationDuration = random(3, 7) + "s";
+      document.body.appendChild(confetti);
+    }
+
+    function showSurprise() {
+      document.getElementById('letterPopup').style.display = 'block';
+    }
+    function closeLetter() {
+      document.getElementById('letterPopup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
