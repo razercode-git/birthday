@@ -1,169 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Blue </title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background: linear-gradient(135deg, #75cae6, #7fb3e7);
-      overflow: hidden;
-      height: 100vh;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-top: 20%;
-      color: #fff;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      animation: fadeIn 2s ease-in-out;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #fff;
-      margin-top: 10px;
-      animation: fadeIn 3s ease-in-out;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      border: none;
-      background: #2e98e3;
-      color: white;
-      font-size: 1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #3364f6;
-      transform: scale(1.1);
-    }
-    /* Letter popup */
-    .letter-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #2caaed;
-      color: #ffb703;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-      padding: 32px 24px;
-      z-index: 1000;
-      max-width: 350px;
-      font-size: 1.2rem;
-      animation: fadeIn 0.7s;
-    }
-    .letter-popup h2 {
-      margin-top: 0;
-      color: #ff4081;
-    }
-    .close-btn {
-      margin-top: 18px;
-      padding: 8px 18px;
-      background: #ff4081;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .close-btn:hover {
-      background: #e91e63;
-    }
-    /* Balloons */
-    .balloon {
-      width: 60px;
-      height: 80px;
-      background: red;
-      border-radius: 50% 50% 50% 50%;
-      position: absolute;
-      bottom: -100px;
-      animation: floatUp 8s infinite ease-in-out;
-    }
-    .balloon::after {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 60px;
-      background: #555;
-      top: 80px;
-      left: 50%;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-120vh); opacity: 0; }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9);}
-      to { opacity: 1; transform: scale(1);}
-    }
-    /* Confetti */
-    .confetti {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: gold;
-      top: -10px;
-      animation: fall 5s linear infinite;
-    }
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(100vh) rotate(360deg); }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My  Fae 🎀✨</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    overflow: hidden;
+    height: 100vh;
+    background: radial-gradient(circle at top, #fff0f8 0%, #ffe6f7 60%, #ffcce6 100%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1 {
+    color: #ff5fa2;
+    font-size: clamp(1.8em, 5vw, 2.8em);
+    text-shadow: 0 0 20px #ffb3d9;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease;
+    padding: 0 10px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .button {
+    background-color: #ff8ecf;
+    border: none;
+    padding: 12px 25px;
+    font-size: clamp(1em, 4vw, 1.2em);
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 100, 200, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+  }
+  .button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 120, 200, 0.5);
+  }
+
+  /* Bunny */
+  .bunny {
+    position: fixed;
+    bottom: 5vh;
+    width: clamp(100px, 25vw, 150px);
+    height: clamp(100px, 25vw, 150px);
+  }
+  .ear {
+    position: absolute;
+    width: 25%;
+    height: 55%;
+    background: white;
+    border-radius: 50% 50% 0 0;
+    border: 2px solid #ffd6e7;
+    transform-origin: bottom center;
+    animation: earWiggle 3s ease-in-out infinite;
+  }
+  .ear.left { left: 20%; transform: rotate(-10deg); }
+  .ear.right { right: 20%; transform: rotate(10deg); }
+  @keyframes earWiggle {
+    0%,100% { transform: rotate(0deg); }
+    50% { transform: rotate(8deg); }
+  }
+
+  .face {
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    background: white;
+    border-radius: 50%;
+    top: 45%;
+    left: 15%;
+    border: 2px solid #ffd6e7;
+  }
+  .eye {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    background: black;
+    border-radius: 50%;
+    top: 68%;
+    animation: blink 4s infinite;
+  }
+  @keyframes blink {
+    0%, 95%, 100% { transform: scaleY(1); }
+    97% { transform: scaleY(0.1); }
+  }
+  .eye.left { left: 35%; }
+  .eye.right { right: 35%; }
+
+  /* Balloons */
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: pink;
+    animation: floatUp 10s linear infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* Hearts */
+  .heart {
+    position: absolute;
+    bottom: -10vh;
+    width: 20px;
+    height: 20px;
+    background: #ff7aa8;
+    transform: rotate(45deg);
+    animation: rise 6s infinite ease-in;
+  }
+  .heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff7aa8;
+    border-radius: 50%;
+  }
+  .heart::before { top: -10px; left: 0; }
+  .heart::after { left: -10px; top: 0; }
+  @keyframes rise {
+    0% { transform: translateY(0) scale(1) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.3) rotate(45deg); opacity: 0; }
+  }
+
+  /* Letter popup */
+  .letter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff9fc;
+    padding: 25px;
+    width: 85%;
+    max-width: 420px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255, 150, 200, 0.5);
+    transition: transform 0.5s ease;
+    z-index: 10;
+  }
+  .letter.show { transform: translate(-50%, -50%) scale(1); }
+  .letter h2 {
+    color: #ff5fa2;
+    font-size: clamp(1.3em, 4vw, 1.8em);
+    margin-bottom: 10px;
+  }
+  .letter p {
+    color: #555;
+    font-size: clamp(1em, 3.5vw, 1.15em);
+    line-height: 1.6em;
+    text-align: left;
+  }
+  .close-btn {
+    background: #ff5fa2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle 2s linear infinite;
+    opacity: 0.8;
+  }
+  @keyframes sparkle {
+    0% { transform: scale(0) translateY(0); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-50px); opacity: 0; }
+  }
+
+  /* Heart burst */
+  .burst-heart {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: #ff5fa2;
+    transform: rotate(45deg);
+    animation: burst 2s ease-out forwards;
+  }
+  .burst-heart::before, .burst-heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff5fa2;
+    border-radius: 50%;
+  }
+  .burst-heart::before { top: -10px; left: 0; }
+  .burst-heart::after { left: -10px; top: 0; }
+  @keyframes burst {
+    0% { opacity: 1; transform: translate(0, 0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(1.8); }
+  }
+</style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday My Blue 💙 🎂</h1>
-  <p>You’re one of the amazing and caring person in my life 💕</p>
-  <button onclick="showSurprise()">Click for Surprise 🎁</button>
 
-  <div class="letter-popup" id="letterPopup">
-    <h2>💖 Birthday Letter 💖</h2>
-    <p style="text-align: left;" color="#333">
-   Happy Birthday, My Blue! 💙
-I hope this year brings you everything you’ve been dreaming of and success that makes you proud, and moments that make your heart full. You deserve all the love, happiness, and peace the world has to offer.
-Keep being your amazing, creative, and unstoppable self,and be able to tolerate my non stop Bak Bak ..and also be the one who spreads warmth, color, and positivity everywhere she goes. 💙 🎂✨
-    </p>
-    <button class="close-btn" onclick="closeLetter()">Close</button>
-  </div>
-  <script>
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
+<h1>For My Lovely Fae 🎀✨</h1>
+<button class="button" onclick="showLetter()">💌 Tap for a Surprise 💖</button>
 
-    // Balloons
-    for (let i = 0; i < 10; i++) {
-      let balloon = document.createElement("div");
-      balloon.className = "balloon";
-      balloon.style.left = random(0, 100) + "vw";
-      balloon.style.background = `hsl(${random(0,360)}, 70%, 60%)`;
-      balloon.style.animationDuration = random(6, 12) + "s";
-      document.body.appendChild(balloon);
-    }
+<div class="bunny">
+  <div class="ear left"></div>
+  <div class="ear right"></div>
+  <div class="face"></div>
+  <div class="eye left"></div>
+  <div class="eye right"></div>
+</div>
 
-    // Confetti
-    for (let i = 0; i < 50; i++) {
-      let confetti = document.createElement("div");
-      confetti.className = "confetti";
-      confetti.style.left = random(0, 100) + "vw";
-      confetti.style.background = `hsl(${random(0,360)}, 80%, 60%)`;
-      confetti.style.animationDuration = random(3, 7) + "s";
-      document.body.appendChild(confetti);
-    }
+<div class="letter" id="letter">
+  <h2>My Dearest Fae 🎀✨</h2>
+  <p id="msg"></p>
+  <button class="close-btn" onclick="closeLetter()">Close 💕</button>
+</div>
 
-    function showSurprise() {
-      document.getElementById('letterPopup').style.display = 'block';
+<audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2023/03/10/audio_4cf8ef4ef9.mp3?filename=soft-romantic-piano-14499.mp3" loop></audio>
+
+<script>
+  const colors = ['#ff8ecf', '#ffd1f0', '#ffb6c1', '#ffcce6', '#ffaad9'];
+  for (let i = 0; i < 15; i++) {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    balloon.style.left = Math.random() * 100 + 'vw';
+    balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    balloon.style.animationDuration = 8 + Math.random() * 6 + 's';
+    document.body.appendChild(balloon);
+  }
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+    heart.style.opacity = Math.random();
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 400);
+
+  function sparkle() {
+    const s = document.createElement('div');
+    s.classList.add('sparkle');
+    s.style.width = s.style.height = Math.random() * 6 + 2 + 'px';
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.top = Math.random() * 100 + 'vh';
+    s.style.animationDuration = 1 + Math.random() * 2 + 's';
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 2000);
+  }
+  setInterval(sparkle, 250);
+
+  const letter = document.getElementById('letter');
+  const msg = document.getElementById('msg');
+  const bgMusic = document.getElementById('bgMusic');
+  const messageText = `
+  My sweetest Fae 🎀✨,  
+  wishing you a very very Happy Birthdayy... 💗  
+  You are such a vibe , a whole new perspective living and adoring things.... 
+  I pray for your great success in your life. 💞🐰  
+  stay happy and stay same , my little sparkle ✨🌸
+  `;
+
+  function showLetter() {
+    letter.classList.add('show');
+    bgMusic.play().catch(() => {});
+    typeMessage(messageText);
+    heartBurst();
+  }
+
+  function closeLetter() {
+    letter.classList.remove('show');
+    msg.textContent = '';
+    bgMusic.pause();
+  }
+
+  function typeMessage(text) {
+    msg.textContent = '';
+    let i = 0;
+    const interval = setInterval(() => {
+      msg.textContent += text.charAt(i);
+      i++;
+      if (i >= text.length) clearInterval(interval);
+    }, 40);
+  }
+
+  function heartBurst() {
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('burst-heart');
+      heart.style.left = '50%';
+      heart.style.top = '50%';
+      const x = (Math.random() - 0.5) * 300 + 'px';
+      const y = (Math.random() - 0.5) * 300 + 'px';
+      heart.style.setProperty('--x', x);
+      heart.style.setProperty('--y', y);
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
     }
-    function closeLetter() {
-      document.getElementById('letterPopup').style.display = 'none';
-    }
-  </script>
+  }
+</script>
+
 </body>
 </html>
